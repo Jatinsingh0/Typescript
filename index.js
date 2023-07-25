@@ -4,8 +4,6 @@ const str1 = "jatin singh";
 const str2 = "virat kohli";
 const areEqual = (str1 === str2) ? "true" : "false";
 console.log(areEqual);
-
-
 // Boolean and Bigint Types
 let hasStarted = true;
 hasStarted = false;
@@ -13,8 +11,6 @@ const isEven = (a) => {
     return a % 2 === 0 ? "true" : "false";
 };
 console.log(isEven(7));
-
-
 // BigInt
 let bigNumber = 900719925474099251n;
 console.log("big" + bigNumber);
@@ -22,13 +18,11 @@ let anotherNum = BigInt("90071992547409925199");
 console.log("another" + anotherNum);
 let sum = bigNumber + anotherNum;
 console.log("final" + sum);
-
 // ANY and UNKNOWN TYPES
 let num;
 num = "jatin";
 num = true;
 num = 89;
-
 // UNKNOWN  this is much safer.
 let digit;
 digit = "jatin singh";
@@ -58,8 +52,6 @@ function getFirstThree(x) {
 }
 getFirstThree("Jatin Singh");
 getFirstThree([1, 2, 3, 4, 5, 6]);
-
-
 // for of,  for in loop
 let arr1 = [1, 2, 3, 4];
 for (const index in arr1) {
@@ -68,13 +60,9 @@ for (const index in arr1) {
 for (const val of arr1) {
     console.log(val);
 }
-
-
 // for each
 let country = ["India", "Australia", "England", "New Zeland"];
 country.forEach((i) => { console.log(i); });
-
-
 // Generics
 // - Generics defines Function type automatically just use any letter in arrow bracket after functoin Name. Like below example.
 function logAnyThing(par) {
@@ -89,3 +77,37 @@ async function result() {
     const users = await uploadPosts("users");
     return users[0].age;
 }
+// map function
+const numbers = [2, 3, 4, 5, 6, 7];
+const doubleData = numbers.map((curVal) => {
+    return curVal * 2;
+});
+console.log(doubleData);
+// Converting numbers into STRING
+const numberToString = numbers.map((curVal) => curVal.toString());
+console.log(numberToString);
+// Filter method
+// Finding Even numbers
+const fil = [2, 3, 4, 5, 6, 7, 88, 8];
+const findEven = fil.filter((curElm) => {
+    return curElm % 2 === 0;
+});
+console.log(findEven);
+// Finding numbers greater than 4
+const aboveFour = fil.filter((curElm) => curElm > 4);
+console.log(aboveFour);
+// finding max value of the array;
+const anum = [2, 4, 56, 4, 3, 3, 44, 32, 20];
+const findMaxValue = (anum) => {
+    if (anum.length === 0) {
+        throw new Error("Array is empty");
+    }
+    let maxi = anum[0];
+    for (let i = 1; i < anum.length; i++) {
+        if (anum[i] > maxi) {
+            maxi = anum[i];
+        }
+    }
+    return maxi;
+};
+console.log(findMaxValue(anum));

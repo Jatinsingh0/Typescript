@@ -145,3 +145,55 @@ async function result(){
     const users = await uploadPosts<Iusers[]>("users")
     return users[0].age
 }
+
+
+// map function
+
+const numbers:number[] = [2,3,4,5,6,7];
+
+const doubleData = numbers.map((curVal:number)=>{
+     return curVal * 2 ;
+})
+console.log(doubleData);
+
+// Converting numbers into STRING
+
+const numberToString: string[] = numbers.map((curVal:number) =>  curVal.toString() );
+console.log(numberToString);
+
+
+// Filter method
+// Finding Even numbers
+
+const fil = [2,3,4,5,6,7,88,8];
+
+const findEven:number[] = fil.filter((curElm:number)=>{
+    return curElm % 2 === 0;
+});
+
+console.log(findEven);
+
+// Finding numbers greater than 4
+const aboveFour:number[] = fil.filter((curElm:number)=> curElm > 4);
+console.log(aboveFour)
+
+
+
+// finding max value of the array;
+
+const anum = [2,4,56,4,3,3,44,32,20];
+
+const findMaxValue = (anum:number[]) =>  {
+    if(anum.length === 0){
+       throw new Error("Array is empty");
+    }
+
+    let maxi = anum[0];
+    for(let i=1; i<anum.length; i++){
+         if(anum[i]>maxi){
+           maxi = anum[i]
+         }
+    }
+    return maxi;
+}
+console.log(findMaxValue(anum))
