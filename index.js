@@ -111,3 +111,61 @@ const findMaxValue = (anum) => {
     return maxi;
 };
 console.log(findMaxValue(anum));
+// Objects
+const person = {
+    name: "Jatin",
+    age: 20,
+    profession: "circket",
+    address: {
+        city: "Delhi",
+        country: "India"
+    },
+};
+console.log(person.name);
+const product = {
+    name: "cricket Bat",
+    price: 14999,
+    quantity: 10,
+    brand: "MRF",
+};
+console.log(product.name + product.brand);
+const person1 = {
+    name: "virat kohli",
+    age: 35,
+    profession: "cricket",
+    address: {
+        city: "Mumbai",
+        country: "India",
+    },
+};
+console.log(person1.name + " " + person1.address.country);
+const person2 = {
+    name: "Kane williamson",
+    age: 34,
+    profession: "cricket",
+    address: {
+        city: "Tauranga",
+        country: "New Zeland",
+    },
+};
+console.log(person2.name + " " + person2.address.country);
+const person3 = {
+    name: "Dale steyn",
+    age: 38,
+    profession: "cricket",
+    address: {
+        city: "Phalaborwa",
+        country: "South Africa"
+    }
+};
+console.log(person3.name + " " + person3.address.country);
+// calculating the total price of product quantity
+const product1 = {
+    name: "Laptop",
+    price: 40000,
+    quantity: 9,
+};
+const claculateTotalPrice = () => {
+    return product1.price * product1.quantity;
+};
+console.log(claculateTotalPrice());

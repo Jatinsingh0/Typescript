@@ -197,3 +197,99 @@ const findMaxValue = (anum:number[]) =>  {
     return maxi;
 }
 console.log(findMaxValue(anum))
+
+
+// Objects
+
+const person: {
+    name: string;
+    age: number;
+    profession: string;
+    address: {
+        city: string;
+        country: string;
+    }
+} = {
+    name: "Jatin",
+    age: 20,
+    profession: "circket",
+    address: {
+        city: "Delhi",
+        country:"India"
+    },
+}
+console.log(person.name);
+
+const product:{
+    name: string;
+    price: number;
+    quantity: number;
+    brand: string;
+
+} = {
+    name: "cricket Bat",
+    price: 14999,
+    quantity: 10,
+    brand: "MRF",
+}
+console.log(product.name + product.brand)
+// you have to use (type Alias), when you have multiple objects with the same properties. just made one type alias according to to your objects and use that into multiple object. examples
+
+type Personss = {              // this is Type Alias
+    name: string;
+    age: number;
+    profession: string;
+    address: {
+        city: string;
+        country: string;
+    }
+}
+const person1: Personss = {
+    name: "virat kohli",
+    age: 35,
+    profession: "cricket",
+    address: {
+        city: "Mumbai",
+        country: "India",
+    },
+}
+console.log(person1.name +" " +  person1.address.country);
+
+const person2: Personss = {
+    name: "Kane williamson",
+    age: 34,
+    profession: "cricket",
+    address: {
+        city: "Tauranga",
+        country: "New Zeland",
+    },
+}
+console.log(person2.name  +" " + person2.address.country)
+
+const person3: Personss = {
+    name: "Dale steyn",
+    age: 38,
+    profession: "cricket",
+    address: {
+        city: "Phalaborwa",
+        country: "South Africa"
+    }
+}
+console.log(person3.name  +" " + person3.address.country )
+
+
+// calculating the total price of product quantity
+ const product1 :{
+        name: string;
+        price: number;
+        quantity: number;
+    } = {
+    name: "Laptop",
+    price: 40000,
+    quantity: 9,
+}
+
+const claculateTotalPrice = (): number => {
+    return product1.price*product1.quantity
+}
+console.log(claculateTotalPrice());
