@@ -169,3 +169,42 @@ const claculateTotalPrice = () => {
     return product1.price * product1.quantity;
 };
 console.log(claculateTotalPrice());
+const add = (a, b) => {
+    return a + b;
+};
+const sub = (x, Y) => x - Y;
+const multiply = (p, q) => {
+    return p * q;
+};
+console.log(add(5, 4));
+console.log(sub(9, 4));
+console.log(multiply(3, 10));
+// Enums 
+var Direction;
+(function (Direction) {
+    Direction[Direction["up"] = 0] = "up";
+    Direction[Direction["down"] = 1] = "down";
+    Direction[Direction["left"] = 2] = "left";
+    Direction[Direction["right"] = 3] = "right";
+})(Direction || (Direction = {}));
+const defining = (value) => {
+    switch (value) {
+        case Direction.up:
+            return console.log("Moving up");
+            break;
+        case Direction.down:
+            return console.log("Moving Down");
+            break;
+        case Direction.left:
+            return console.log("Moving left");
+            break;
+        case Direction.right:
+            return console.log("Moving right");
+            break;
+        default:
+            return console.log("Unknown value provided");
+    }
+};
+defining(Direction.up);
+defining(Direction.left);
+defining(Direction.right);

@@ -293,3 +293,60 @@ const claculateTotalPrice = (): number => {
     return product1.price*product1.quantity
 }
 console.log(claculateTotalPrice());
+
+
+// call signature -  used to define the type of a function. Call Signatures describe the shape of a function by specifying the types of its parameters and return value. 
+
+type MathOperation = (a:number, b:number) => number;
+
+const add: MathOperation = (a,b) => {
+    return a + b
+};
+const sub: MathOperation = (x,Y) => x - Y;
+
+const multiply: MathOperation = (p, q) => {
+     return p * q;
+}
+
+console.log(add(5,4));
+console.log(sub(9,4));
+console.log(multiply(3,10));
+
+
+
+// Enums 
+
+enum Direction {
+    up,
+    down,
+    left,
+    right,
+}
+
+const defining = (value: Direction) => {
+    switch(value){
+       case Direction.up:
+        return console.log("Moving up");
+        break;
+
+       case Direction.down:
+        return console.log("Moving Down");
+        break;
+
+       case Direction.left:
+        return console.log("Moving left");
+        break;
+
+       case Direction.right:
+        return console.log("Moving right");
+        break;
+
+        default:
+            return console.log("Unknown value provided");
+
+    }
+}
+
+defining(Direction.up);
+defining(Direction.left);
+defining(Direction.right);
