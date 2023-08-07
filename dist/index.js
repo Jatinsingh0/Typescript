@@ -77,6 +77,10 @@ async function result() {
     const users = await uploadPosts("users");
     return users[0].age;
 }
+const adds = (a, b) => {
+    return (a + b);
+};
+adds(5, 10);
 // map function
 const numbers = [2, 3, 4, 5, 6, 7];
 const doubleData = numbers.map((curVal) => {
@@ -208,3 +212,28 @@ const defining = (value) => {
 defining(Direction.up);
 defining(Direction.left);
 defining(Direction.right);
+const product11 = ["Nokia", 2000, 10];
+const product12 = ["samsung", 70000, 5];
+const productss = (pro) => {
+    const [product, price, quantity] = pro;
+    console.log(`i need ${quantity} ${product} mobile phones of Rs${price} each.`);
+};
+productss(product11);
+productss(product12);
+// OOPS
+class students {
+    name;
+    age;
+    hobbies;
+    constructor(name, age, hobbies) {
+        this.name = name;
+        this.age = age;
+        this.hobbies = hobbies;
+    }
+}
+const student1 = new students("Jatin Singh", 20, ["cricket", "business"]);
+const student2 = new students("Virat kohli", 35, ["cricket", "travelling"]);
+const student3 = new students("Anish singh thakur", 28, ["Trading stocks", "traveling"]);
+console.log(student1);
+console.log(student2);
+console.log(student3);

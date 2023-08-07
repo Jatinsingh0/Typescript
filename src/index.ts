@@ -115,7 +115,7 @@ country.forEach((i)=>{console.log(i)});
 // - Generics defines Function type automatically just use any letter in arrow bracket after functoin Name. Like below example.
 
 
-function logAnyThing<A>(par: A): A{
+function logAnyThing<T>(par: T): T{
   return par;
 }
 
@@ -145,6 +145,13 @@ async function result(){
     const users = await uploadPosts<Iusers[]>("users")
     return users[0].age
 }
+
+
+const adds = <T extends number>(a: T, b: T): T => {
+  return (a + b) as T ;
+}   
+
+adds(5,10);
 
 
 // map function
@@ -350,3 +357,45 @@ const defining = (value: Direction) => {
 defining(Direction.up);
 defining(Direction.left);
 defining(Direction.right);
+
+
+// Tuples -
+// A tuple is a data structure that allows you to store a fixed-size collection of elements of different types
+// Tuples are particularly useful when you want to represent a fixed-size collection of values with different data types.
+
+type productInfo = readonly [string, number, number];   //Tuple
+
+const product11: productInfo  = ["Nokia", 2000, 10];
+const product12: productInfo = ["samsung", 70000, 5];
+
+const productss = (pro: productInfo) => {
+    const[product, price, quantity] = pro;
+    console.log(`i need ${quantity} ${product} mobile phones of Rs${price} each.`)
+}
+
+productss(product11);
+productss(product12)
+
+
+
+// OOPS
+
+class students {
+    name: string;
+    age: number;
+    hobbies: string[];
+
+    constructor(name: string, age: number, hobbies: string[]){
+        this.name = name;
+        this.age = age;
+        this.hobbies = hobbies;
+    }
+}
+
+const student1: students = new students("Jatin Singh", 20, ["cricket", "business"]);
+const student2: students = new students("Virat kohli", 35, ["cricket", "travelling"]);
+const student3: students = new students("Anish singh thakur", 28, ["Trading stocks", "traveling"]);
+
+console.log(student1);
+console.log(student2);
+console.log(student3);
