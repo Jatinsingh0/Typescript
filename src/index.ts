@@ -107,7 +107,7 @@ for(const val of arr1){
 
 let country: string[] = ["India", "Australia", "England", "New Zeland"]
 
-country.forEach((i)=>{console.log(i)});
+country.forEach((i)=> console.log(i));
 
 
 
@@ -206,8 +206,7 @@ const findMaxValue = (anum:number[]) =>  {
 console.log(findMaxValue(anum))
 
 
-// Objects
-
+// Objects  
 const person: {
     name: string;
     age: number;
@@ -240,8 +239,10 @@ const product:{
     brand: "MRF",
 }
 console.log(product.name + product.brand)
-// you have to use (type Alias), when you have multiple objects with the same properties. just made one type alias according to to your objects and use that into multiple object. examples
 
+
+
+// you have to use (type Alias), when you have multiple objects with the same properties. just made one type alias according to to your objects and use that into multiple object. examples
 type Personss = {              // this is Type Alias
     name: string;
     age: number;
@@ -303,7 +304,6 @@ console.log(claculateTotalPrice());
 
 
 // call signature -  used to define the type of a function. Call Signatures describe the shape of a function by specifying the types of its parameters and return value. 
-
 type MathOperation = (a:number, b:number) => number;
 
 const add: MathOperation = (a,b) => {
@@ -322,7 +322,6 @@ console.log(multiply(3,10));
 
 
 // Enums 
-
 enum Direction {
     up,
     down,
@@ -362,7 +361,6 @@ defining(Direction.right);
 // Tuples -
 // A tuple is a data structure that allows you to store a fixed-size collection of elements of different types
 // Tuples are particularly useful when you want to represent a fixed-size collection of values with different data types.
-
 type productInfo = readonly [string, number, number];   //Tuple
 
 const product11: productInfo  = ["Nokia", 2000, 10];
@@ -379,23 +377,108 @@ productss(product12)
 
 
 // OOPS
-
-class students {
-    name: string;
-    age: number;
-    hobbies: string[];
-
-    constructor(name: string, age: number, hobbies: string[]){
-        this.name = name;
-        this.age = age;
-        this.hobbies = hobbies;
-    }
+class students {                  //Shorthand properties
+    constructor(
+        public name: string,
+        public age: number,
+        protected hobbies: string[],
+    ){}
 }
 
 const student1: students = new students("Jatin Singh", 20, ["cricket", "business"]);
 const student2: students = new students("Virat kohli", 35, ["cricket", "travelling"]);
 const student3: students = new students("Anish singh thakur", 28, ["Trading stocks", "traveling"]);
+const student4: students = new students("Jonathan", 28, ["Gaming", "traveling"]);
+
 
 console.log(student1);
 console.log(student2);
 console.log(student3);
+console.log(student4);
+
+
+// type Alias
+type userinfo = {
+  name: string;
+  age: number;
+  address: string;
+};
+
+const userInfo1: userinfo = {
+ name: "jatin",
+ age: 20,
+ address: "najafgarh",
+}
+
+const india : {
+    name: string;
+    mostFamous: string;
+    mostFollowers: string;
+    indiaKnownAs: string;
+    } = {
+        name: "viratKohli",
+        mostFamous: "viratKohli",
+        mostFollowers: "viratKohli",
+        indiaKnownAs: "viratKohli",
+    }
+
+    // function defining
+    type funcType = (a:number , b:number) => number;
+    const func11: funcType = (a, b) => {
+        return a*b;
+    }
+    console.log(func11(9, 7));
+    
+
+
+// Array
+const arr10: number[] = [1,2,3,33,22,44,43,21];
+const arr11: string[] = ["jatin", "virat", "anish"];
+const arr12: string | number = 6777;
+
+// interface
+interface book5 {
+  name: string;
+  author: string;
+  price: number;
+}
+
+const book5:book5 = {
+    name: "New Trader Rich Trader",
+    author: "Steve burns and Holly burns",
+    price: 250,
+  }
+interface bestAuthor extends book5 {
+  published: number;
+  pages: number;
+  quality: string;
+}
+
+const bookDetails: bestAuthor = {
+    name: "New Trader Rich Trader",
+    author: "Steve burns and Holly burns",
+    price: 250,
+    published: 2003,
+    pages: 278,
+    quality: "premium"
+}
+
+
+// Rest operator
+const funcRest = (...r:number[]) => {
+    return r
+}
+console.log(funcRest(12,3,43,54,23,1,232,3,43,65,768,8));
+
+
+// Class
+class bikes  {
+    constructor(
+        public name: string,
+        public company: string,
+        public price: number,
+    ){}
+}
+
+const bike1:bikes = new bikes("Ninja", "Yamaha", 7900000);
+console.log(bike1)

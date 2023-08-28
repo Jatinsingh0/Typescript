@@ -62,7 +62,7 @@ for (const val of arr1) {
 }
 // for each
 let country = ["India", "Australia", "England", "New Zeland"];
-country.forEach((i) => { console.log(i); });
+country.forEach((i) => console.log(i));
 // Generics
 // - Generics defines Function type automatically just use any letter in arrow bracket after functoin Name. Like below example.
 function logAnyThing(par) {
@@ -115,7 +115,7 @@ const findMaxValue = (anum) => {
     return maxi;
 };
 console.log(findMaxValue(anum));
-// Objects
+// Objects  
 const person = {
     name: "Jatin",
     age: 20,
@@ -234,6 +234,58 @@ class students {
 const student1 = new students("Jatin Singh", 20, ["cricket", "business"]);
 const student2 = new students("Virat kohli", 35, ["cricket", "travelling"]);
 const student3 = new students("Anish singh thakur", 28, ["Trading stocks", "traveling"]);
+const student4 = new students("Jonathan", 28, ["Gaming", "traveling"]);
 console.log(student1);
 console.log(student2);
 console.log(student3);
+console.log(student4);
+const userInfo1 = {
+    name: "jatin",
+    age: 20,
+    address: "najafgarh",
+};
+const india = {
+    name: "viratKohli",
+    mostFamous: "viratKohli",
+    mostFollowers: "viratKohli",
+    indiaKnownAs: "viratKohli",
+};
+const func11 = (a, b) => {
+    return a * b;
+};
+console.log(func11(9, 7));
+// Array
+const arr10 = [1, 2, 3, 33, 22, 44, 43, 21];
+const arr11 = ["jatin", "virat", "anish"];
+const arr12 = 6777;
+const book5 = {
+    name: "New Trader Rich Trader",
+    author: "Steve burns and Holly burns",
+    price: 250,
+};
+const bookDetails = {
+    name: "New Trader Rich Trader",
+    author: "Steve burns and Holly burns",
+    price: 250,
+    published: 2003,
+    pages: 278,
+    quality: "premium"
+};
+// Rest operator
+const funcRest = (...r) => {
+    return r;
+};
+console.log(funcRest(12, 3, 43, 54, 23, 1, 232, 3, 43, 65, 768, 8));
+// Class
+class bikes {
+    name;
+    company;
+    price;
+    constructor(name, company, price) {
+        this.name = name;
+        this.company = company;
+        this.price = price;
+    }
+}
+const bike1 = new bikes("Ninja", "Yamaha", 7900000);
+console.log(bike1);
