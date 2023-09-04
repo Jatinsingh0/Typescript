@@ -146,6 +146,11 @@ async function result(){
     return users[0].age
 }
 
+async function resu(){
+    const post = await uploadPosts<Iposts[]>("post");
+    return post[3].desc
+}
+
 
 const adds = <T extends number>(a: T, b: T): T => {
   return (a + b) as T ;
@@ -482,3 +487,45 @@ class bikes  {
 
 const bike1:bikes = new bikes("Ninja", "Yamaha", 7900000);
 console.log(bike1)
+
+// type assertion
+// const btn = document.getElementById("btn") as HTMLElement;
+// btn.onclick;
+// const img = document.getElementById("myImg") as HTMLImageElement ;
+// img.src;
+
+
+const form = document.getElementById("myForm") as HTMLFormElement;
+const formInput = document.querySelector("#formInput") as HTMLInputElement;
+
+form.onsubmit = (e) => {
+     e.preventDefault();
+     const inputValue = Number(formInput.value);
+     const h2 = document.createElement("h4");
+     h2.textContent = String(inputValue + 10);
+     const body = document.querySelector("body")!;
+     body.append(h2)
+}
+
+// generics
+
+const func21 = <T>(n: T): T => {
+    return n ;
+}
+const ans1 = func21("Jatin");
+const ans2 = func21(21);
+
+
+const ex : {
+   name: String;
+   age: number;
+} = {
+   name: "xyz",
+   age: 18,
+}
+
+const exy = <T>(info: T): T => {
+   return info;
+}
+const exyz = exy(ex);
+ exyz.age;

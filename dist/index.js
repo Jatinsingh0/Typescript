@@ -77,6 +77,10 @@ async function result() {
     const users = await uploadPosts("users");
     return users[0].age;
 }
+async function resu() {
+    const post = await uploadPosts("post");
+    return post[3].desc;
+}
 const adds = (a, b) => {
     return (a + b);
 };
@@ -289,3 +293,33 @@ class bikes {
 }
 const bike1 = new bikes("Ninja", "Yamaha", 7900000);
 console.log(bike1);
+// type assertion
+// const btn = document.getElementById("btn") as HTMLElement;
+// btn.onclick;
+// const img = document.getElementById("myImg") as HTMLImageElement ;
+// img.src;
+const form = document.getElementById("myForm");
+const formInput = document.querySelector("#formInput");
+form.onsubmit = (e) => {
+    e.preventDefault();
+    const inputValue = Number(formInput.value);
+    const h2 = document.createElement("h4");
+    h2.textContent = String(inputValue + 10);
+    const body = document.querySelector("body");
+    body.append(h2);
+};
+// generics
+const func21 = (n) => {
+    return n;
+};
+const ans1 = func21("Jatin");
+const ans2 = func21(21);
+const ex = {
+    name: "xyz",
+    age: 18,
+};
+const exy = (info) => {
+    return info;
+};
+const exyz = exy(ex);
+exyz.age;
